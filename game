@@ -1,0 +1,56 @@
+ch1 player;
+ch11 player2;
+ch2[] bb;
+entity3[] cc;
+int state = 0;
+int times = 0;
+
+void setup() {
+  size(900, 900);
+  player = new ch1(500, 500, 30);
+  player2 = new ch11(500, 500, 32);
+  bb = new ch2[10];
+  cc = new entity3[10];
+  for (int i = 0; i < 10; i++) {
+    if (i%3 ==0) bb[i] = new ch2_child1(random(0, 900), random(0, 100), 1, i);
+    if (i%3==1) bb[i]=new ch2_child2(random(0, 900), random(0, 100), 1, i);
+    if (i%3 ==2)  bb[i]=new ch2(random(0, 900), random(0, 100), 1, i);
+    if (i%3 ==2) cc[i]=new entity3(random(0, 900), random(0, 100), 4, i);
+    if (i%3 ==0) cc[i] = new ch3_child1(random(0, 900), random(0, 100), 4, i);
+    if (i%3==1) cc[i]=new ch3_child2(random(0, 900), random(0, 100), 4, i);
+  }
+  times = millis();
+}
+void draw() {
+  if (state == 0) {
+    mainMenu();
+  } else if (state == 1) {
+    int passtimes = millis() - times;
+    background(255);
+    fill(0);
+    textSize(24);
+    text("Time: " + passtimes / 1000 + "s", 50, 50);
+    player.display();
+
+    for (int i = 0; i < 10; i++) {
+      bb[i].bonobono();
+      bb[i].display();
+      cc[i].Life();
+      cc[i].display();
+      bb[i].baggue();
+      cc[i].baggue();
+      player.collide(bb[i]);
+      player.collide22(cc[i]);
+    }
+    if (passtimes > 10000) {
+      player = player2;
+      player2.special();
+    }
+  } else {
+    gameOver();
+  }
+}
+void keyPressed() {
+  player.jun();
+  player2.jun();
+}
