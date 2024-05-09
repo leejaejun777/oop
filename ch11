@@ -1,0 +1,31 @@
+class ch11 extends ch1{
+  ch11(float p, float q, float r){
+    super(p,q,r);
+  }
+  void special(){
+    display();
+    fill(255,0,221);
+    circle(x + 0.1*z, y + 0.3*z, z / 3.5);
+    circle(x + 0.32*z, y + 0.3*z, z / 3.5);
+    stroke(255,0,221);
+    strokeWeight(z / 6.5);
+    line(x, y + 0.3*z, x + 0.2*z, y + 0.5*z);
+    line(x + 0.4*z, y + 0.3*z, x + 0.2*z, y + 0.5*z);
+    noStroke();
+    circle(x + 0.7*z, y + 0.3*z, z / 3.5);
+    circle(x + 0.92*z, y + 0.3*z, z / 3.5);
+    stroke(255,0,221);
+    strokeWeight(z / 6.5);
+    line(x + 0.6*z, y + 0.3*z, x + 0.8*z, y + 0.5*z);
+    line(x + 1.0*z, y + 0.3*z, x + 0.8*z, y + 0.5*z);
+  }
+  void jun(){
+    super.jun();
+  }
+  void collide(ch2 bb){
+    super.collide(bb);
+  }
+  void collide22(entity3 cc){
+    super.collide22(cc);
+  }
+}
