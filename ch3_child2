@@ -1,0 +1,14 @@
+class ch3_child2 extends entity3 {
+  ch3_child2(float p, float q, float r, int op) {
+    super(p,q,r,op);
+  }
+  void display() {
+    Life();
+    fill(0, 0, 255);
+    arc(x, y-6*d, d*10, d*10, PI, 2*PI);
+    arc(x, y-5*d, d*23, d*2, PI, 2*PI);
+  }
+  void baggue(){
+    super.baggue();
+  }
+}
