@@ -1,0 +1,14 @@
+class ch3_child1 extends entity3{
+  ch3_child1(float p, float q, float r, int op){
+    super(p,q,r,op);
+  }
+  void display(){
+    Life();
+    fill(255, 200, 200);
+    ellipse(x-d*5, y+1.5*d, d*2, d*2);
+    ellipse(x+d*5, y+1.5*d, d*2, d*2);
+  }
+  void baggue(){
+    super.baggue();
+  }
+}
