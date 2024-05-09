@@ -1,0 +1,14 @@
+class ch2_child1 extends ch2{
+  ch2_child1(float p, float q, float r, int op2){
+    super(p,q,r,op2);
+  }
+  void display(){
+    bonobono();
+    fill(255,100,100);
+    triangle(x-d*20, y+22*d,x-d*20, y+42*d, x,y+32*d);
+    triangle(x+d*20, y+22*d, x+d*20, y+42*d,x, y+32*d);
+  }
+  void baggue(){
+    super.baggue();
+  }
+}
